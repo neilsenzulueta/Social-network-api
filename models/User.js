@@ -12,7 +12,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, 'Must be email addy']
+      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Must be email addy']
     },
     thoughts: {
       type: Schema.Types.ObjectId,
@@ -30,6 +30,10 @@ const userSchema = new Schema(
     id: false,
   }
 );
+
+userSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
+  });
 
 const User = model('user', userSchema);
 

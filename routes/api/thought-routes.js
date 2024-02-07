@@ -9,7 +9,7 @@ router.route('/:thoughtId')
     .put((req, res) => res.send(`this is PUT /api/thoughts/${req.params.thoughtId}`))
     .delete((req, res) => res.send(`this is DELETE /api/thoughts/${req.params.thoughtId}`))
 
-router.route('/:thoughtId/reactions/')
+router.route('/:thoughtId/reactions')
     .post((req, res) => res.send(
         `this is POST '/api/thoughts/${req.params.thoughtId}/reactions'`))
 
