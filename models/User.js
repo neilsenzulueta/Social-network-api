@@ -14,14 +14,18 @@ const userSchema = new Schema(
       unique: true,
       match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Must be email addy']
     },
-    thoughts: {
+    thoughts: [
+      {
       type: Schema.Types.ObjectId,
       ref: 'Thought'
-    },
-    friends: {
+      }
+    ],
+    friends: [
+      {
       type: Schema.Types.ObjectId,
       ref: 'User'
-    }
+    },
+  ],
   },
   {
     toJSON: {
