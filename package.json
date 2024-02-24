@@ -6,6 +6,7 @@
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node index.js",
+      "watch": "nodemon",
       "seed": "node seeds/seed.js"
     },
     "keywords": [],
@@ -23,6 +24,7 @@
       "mongoose": "^7.0.2"
     },
     "devDependencies": {
+      "nodemon": "2.0.3",
       "eslint": "^7.12.1",
       "eslint-config-prettier": "^6.15.0",
       "prettier": "^2.1.2"
